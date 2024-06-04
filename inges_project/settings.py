@@ -55,6 +55,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'https://frontpe.azurewebsites.net',
+    'https://frontpe.azurewebsites.net/crearSeries'
 ]
 
 
