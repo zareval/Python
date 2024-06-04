@@ -54,12 +54,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://domain.com",
-    "http://api.domain.com",
-    "http://localhost:4200",
-    "htpp://127.0.0.1:4200",
-    "https://frontpe.azurewebsites.net/listarPeliculas"
+    'https://frontpe.azurewebsites.net',
 ]
+
 
 ROOT_URLCONF = 'inges_project.urls'
 
