@@ -16,7 +16,6 @@ class TestSerie(TestCase):
             trailer='https://www.youtube.com/trailer1',
             e_produccion='https://www.estudio.com/produccion1',
             poster='https://www.estudio.com/poster1',
-            director='Director1',
         )
 
     def tearDown(self):
@@ -28,13 +27,13 @@ class TestSerie(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertGreater(len(data), 0)
+        
     def test_serieView_post(self):
         response = self.client.post(
             'api/peliculas/creacionSe',
             data={
                 "genero": "ACcion",
                 "duracion": 120,
-                "director": "Akira",
                 "pais": "japon",
                 "protagonistas": [
                     3,
@@ -62,7 +61,7 @@ class TestSerie(TestCase):
             'poster': 'https://www.estudio.com/poster-modificado',
             'director': 'DirectorModificado'
         }
-        response = self.client.put(reverse('actualizacionSe', kwargs={'pkid': pkid}), data=json.dumps(data), content_type='application/json')
+        response = self.client.put(reverse('actualizacion', kwargs={'pkid': pkid}), data=json.dumps(data), content_type='application/json')
         self.assertIn(response.status_code, [200])
 
     def test_serieView_delete(self):

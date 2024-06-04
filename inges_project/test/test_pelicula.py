@@ -16,7 +16,7 @@ class TestPelicula(TestCase):
             trailer='https://www.youtube.com/trailer1',
             e_produccion='https://www.estudio.com/produccion1',
             poster='https://www.estudio.com/poster1',
-            director='Director1',
+
         )
 
     def tearDown(self):
@@ -63,7 +63,6 @@ class TestPelicula(TestCase):
             'trailer': 'https://www.youtube.com/trailer-modificado',
             'e_produccion': 'https://www.estudio.com/produccion-modificada',
             'poster': 'https://www.estudio.com/poster-modificado',
-            'director': 'DirectorModificado'
         }
         response = self.client.put(reverse('actualizacion', kwargs={'pkid': pkid}), data=json.dumps(data), content_type='application/json')
         self.assertIn(response.status_code, [200])

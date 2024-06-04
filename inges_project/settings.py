@@ -86,8 +86,16 @@ WSGI_APPLICATION = 'inges_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bdpelis',  # Reemplaza con el nombre de tu base de datos
+        'USER': 'ingesweb',  # Reemplaza con tu nombre de usuario
+        'PASSWORD': '#electiva123',  # Reemplaza con tu contraseña
+        'HOST': 'bdpelis.postgres.database.azure.com',  # Reemplaza con el host de tu servidor PostgreSQL
+        'PORT': '5432',  # Usualmente el puerto es 5432, pero verifica si es diferente
+        'OPTIONS': {
+            'sslmode':'require'
+        },
+        
     }
 }
 

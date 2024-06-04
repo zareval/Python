@@ -9,7 +9,7 @@ urlpatterns=[
     
     #URL Peli
     path('creacionPe/',peliView.as_view()), #post
-    path('editarPelicula/<int:pk>/', peliView.as_view()), 
+    path('editarPelicula/<int:pk>/', peliView.as_view(), name='actualizacion'), 
     path('eliminacionPeli/<int:pkid>/', peliView.as_view(), name='eliminacion'), #delete    
     path('peliculas/<int:pk>/', pelicula_detail_api_view.as_view(), name='pelicula_detail'),
     
